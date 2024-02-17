@@ -10,6 +10,7 @@ function Get-BcReleaseWaveFeature
 
     $Url = "https://learn.microsoft.com/en-us/dynamics365/release-plan/$Wave/smb/dynamics365-business-central/planned-features"
     if ($Wave -lt '2023wave1') { $Url = "https://learn.microsoft.com/en-us/dynamics365-release-plan/$Wave/smb/dynamics365-business-central/planned-features" }
+    $BaseUrl = $Url -replace 'planned-features$', ''
 
     Write-Verbose "Url is $Url"
 
@@ -28,6 +29,7 @@ function Get-BcReleaseWaveFeature
             if ($Cells)
             {
                 $Feature = $Cells[0] | Get-HtmlNodeText
+                $Link = ($Cells[0] | Select-HtmlNode -CssSelector 'a').GetAttributeValue('href', '')
                 $EnabledFor = $Cells[1] | Get-HtmlNodeText
                 $PublicPreviewText = $Cells[2] | Get-HtmlNodeText
                 $GeneralAvailabilityText = $Cells[3] | Get-HtmlNodeText
@@ -51,6 +53,7 @@ function Get-BcReleaseWaveFeature
                     Wave                    = $Wave
                     Section                 = $Section
                     Feature                 = $Feature
+                    Link                    = "$($BaseUrl)$($Link)"
                     EnabledFor              = $EnabledFor
                     PublicPreviewText       = $PublicPreviewText
                     GeneralAvailabilityText = $GeneralAvailabilityText

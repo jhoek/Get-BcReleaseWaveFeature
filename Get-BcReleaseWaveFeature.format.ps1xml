@@ -5,13 +5,35 @@
             <ViewSelectedBy>
                 <TypeName>UncommonSense.BcReleaseWaveFeature</TypeName>
             </ViewSelectedBy>
-            <GroupBy>
-                <PropertyName>Wave</PropertyName>
-            </GroupBy>
             <TableControl>
+                <TableHeaders>
+                    <TableColumnHeader>
+                        <Width>12</Width>
+                    </TableColumnHeader>
+                    <TableColumnHeader>
+                        <Width>36</Width>
+                    </TableColumnHeader>
+                    <TableColumnHeader>
+                        <Width>100</Width>
+                    </TableColumnHeader>
+                    <TableColumnHeader>
+                        <Width>56</Width>
+                    </TableColumnHeader>
+                    <TableColumnHeader>
+                        <Label>Public Preview</Label>
+                        <Width>16</Width>
+                    </TableColumnHeader>
+                    <TableColumnHeader>
+                        <Label>General Avail.</Label>
+                        <Width>16</Width>
+                    </TableColumnHeader>
+                </TableHeaders>
                 <TableRowEntries>
                     <TableRowEntry>
                         <TableColumnItems>
+                            <TableColumnItem>
+                                <PropertyName>Wave</PropertyName>
+                            </TableColumnItem>
                             <TableColumnItem>
                                 <PropertyName>Section</PropertyName>
                             </TableColumnItem>
@@ -22,12 +44,10 @@
                                 <PropertyName>EnabledFor</PropertyName>
                             </TableColumnItem>
                             <TableColumnItem>
-                                <PropertyName>PublicPreview</PropertyName>
-                                <FormatString>d</FormatString>
+                                <PropertyName>PublicPreviewText</PropertyName>
                             </TableColumnItem>
                             <TableColumnItem>
-                                <PropertyName>GeneralAvailability</PropertyName>
-                                <FormatString>d</FormatString>
+                                <PropertyName>GeneralAvailabilityText</PropertyName>
                             </TableColumnItem>
                         </TableColumnItems>
                     </TableRowEntry>
