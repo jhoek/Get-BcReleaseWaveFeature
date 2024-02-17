@@ -47,7 +47,7 @@ function Get-BcReleaseWaveFeature
                 }
 
                 [PSCustomObject]@{
-                    PSTypeName              = 'UncommonSense.BcUtils.BcReleaseWaveFeature'
+                    PSTypeName              = 'UncommonSense.BcReleaseWaveFeature'
                     Wave                    = $Wave
                     Section                 = $Section
                     Feature                 = $Feature
