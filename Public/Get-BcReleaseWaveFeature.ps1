@@ -11,6 +11,8 @@ function Get-BcReleaseWaveFeature
     $Url = "https://learn.microsoft.com/en-us/dynamics365/release-plan/$Wave/smb/dynamics365-business-central/planned-features"
     if ($Wave -lt '2023wave1') { $Url = "https://learn.microsoft.com/en-us/dynamics365-release-plan/$Wave/smb/dynamics365-business-central/planned-features" }
 
+    Write-Verbose "Url is $Url"
+
     $Document = ConvertTo-HtmlDocument -Uri $Url
     $Sections = $Document | Select-HtmlNode -CssSelector 'h2:not(.title)' -All | ForEach-Object { $_ | Get-HtmlNodeText }
     $Tables = $Document | Select-HtmlNode -CssSelector 'table' -All
@@ -59,7 +61,3 @@ function Get-BcReleaseWaveFeature
         }
     }
 }
-
-
-Get-BcReleaseWaveFeature -Wave 2024wave1
-Get-BcReleaseWaveFeature -Wave 2021wave1
