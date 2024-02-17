@@ -30,7 +30,7 @@
     Copyright         = 'Copyright (c) 2024 Jan Hoek'
 
     # Description of the functionality provided by this module
-    # Description = ''
+    Description       = 'PowerShell micro-module for retrieving Microsoft Dynamics 365 Business Central release wave feature information from Microsoft Learn'
 
     # Minimum version of the PowerShell engine required by this module
     # PowerShellVersion = ''
@@ -95,7 +95,7 @@
         PSData = @{
 
             # Tags applied to this module. These help with module discovery in online galleries.
-            # Tags = @()
+            Tags = @('bc', 'release', 'wave','feature')
 
             # A URL to the license for this module.
             # LicenseUri = ''
